@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minWidth="-Infinity" prefHeight="749.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainController">
+   <children>
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Application">
+            <items>
+              <MenuItem fx:id="startButton" mnemonicParsing="false" onAction="#start" text="Start" />
+                  <MenuItem mnemonicParsing="false" onAction="#load" text="Load" />
+                  <MenuItem mnemonicParsing="false" onAction="#create" text="Create" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Details">
+            <items>
+              <MenuItem fx:id="dictionaryButton" mnemonicParsing="false" onAction="#dictionary" text="Dictionary" />
+                  <MenuItem fx:id="roundsButton" mnemonicParsing="false" onAction="#rounds" text="Rounds" />
+                  <MenuItem fx:id="solutionButton" mnemonicParsing="false" onAction="#solution" text="Solution" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="TOP_CENTER" layoutX="36.0" layoutY="106.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="700.0" spacing="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Words" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Points" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Guess %" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutY="64.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="700.0" spacing="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+         <children>
+            <Label fx:id="totalwords" text="Label" textFill="#4610da">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="points" text="Label" textFill="#e17a05">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="rightguess" text="Label" textFill="#00b51b">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <ImageView fx:id="image" fitHeight="373.0" fitWidth="278.0" layoutX="85.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="164.0" />
+      <MenuButton fx:id="position" layoutX="86.0" layoutY="665.0" mnemonicParsing="false" text="Position">
+         <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+         </items></MenuButton>
+      <MenuButton fx:id="letter" layoutX="161.0" layoutY="665.0" mnemonicParsing="false" text="Letter">
+         <items>
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items></MenuButton>
+      <Button fx:id="okButton" layoutX="265.0" layoutY="667.0" mnemonicParsing="false" onAction="#ok" text="OK">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <VBox layoutX="39.0" layoutY="553.0" prefHeight="39.0" prefWidth="338.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="553.0">
+         <children>
+            <HBox fx:id="iterations" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="word" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" />
+         </children>
+      </VBox>
+      <Text layoutX="343.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text layoutX="408.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Letter">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Label fx:id="positionLabel" layoutX="343.0" layoutY="682.0" text="choose">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="letterLabel" layoutX="408.0" layoutY="682.0" text="choose">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <VBox layoutX="377.0" layoutY="136.0" prefHeight="507.0" prefWidth="363.0" spacing="20.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Most likely letters from left to right:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="letters" alignment="TOP_LEFT" lineSpacing="6.0" prefHeight="466.0" prefWidth="363.0" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Ink Free" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox layoutX="85.0" layoutY="137.0" prefHeight="25.0" prefWidth="138.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tries left : ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Label fx:id="lives" text="Label" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
